@@ -65,15 +65,17 @@ Before you can use Jekyll to create a {% data variables.product.prodname_pages %
  $ git checkout --orphan gh-pages
  # Creates a new branch, with no history or contents, called gh-pages and switches to the gh-pages branch
  ```
- 7. To create a new Jekyll site, use the `jekyll new` command, replacing _VERSION_ with the current dependency version for Jekyll. For more information, see "[Dependency versions](https://pages.github.com/versions/)" on the {% data variables.product.prodname_pages %} site.
+ 7. To create a new Jekyll site, install Jekyll  and use the `jekyll new` command, replacing _VERSION_ with the current dependency version for Jekyll. For more information, see "[Dependency versions](https://pages.github.com/versions/)" on the {% data variables.product.prodname_pages %} site.
     - If you installed Bundler:
       ```shell
-      $ bundle exec jekyll <em>VERSION</em> new .
+      $ bundle add jekyll -v <em>VERSION</em> 
+      $ bundle exec jekyll new .
       # Creates a Jekyll site in the current directory
       ```
     - If you don't have Bundler installed:
      ```shell
-     $ jekyll <em>VERSION</em> new .
+     $ gem install jekyll -v <em>VERSION</em>
+     $ jekyll new .
      # Creates a Jekyll site in the current directory
      ```
 8. Open the Gemfile that was created and follow the instructions in the Gemfile's comments to use {% data variables.product.prodname_pages %}.
